@@ -1,0 +1,37 @@
+
+
+1.  What is a random seed in simulation, and why should we care?  How was simulation used in the article this week? 
+
+A random seed is initial value from which a psuedo random number generator begins a sequence.  Each method for generating pseudo random numbers has a period, after which the sequence repeats.  Using this seed again with the same pseudo random number generator will reproduce the sequence identically.  These features are important because we are able to simulate random situations to a considerable degree, and we can also reproduce the exact same results each time.
+
+This article begins with strategic planning documents which prescribe specific logistical planning guidelines, in terms of number of units required for specific operations.  They cite research by the Institute of Defense Analysis suggesting there lots of the allocation rules could be completely inappropriate.  The authors then used a Monte Carlo simulation to test these guidelines and recommend through quantitative analysis what realistic unit-level demands exist for major combat operations.
+
+The model begins with the limiting factor of Hospital Admissions, it accounts for missione hours for the two distinct scenarios of admissions or non-admission casualties, these are combined to Total Mission Hours Adjusted By Patients/Aircraft, weighted by the practically calculated distribution of the number of people transported in a mission, and gives expected total airframes and admissions in two scenarios for daily operational flight hours.
+
+
+2.  Share some code from last week's exercises that was particularly rewarding or frustrating.  We will comment on each other's works. 
+
+Here is Dr. Larry's addition to Alec Mccabe's poker simulation.  The whole thread was very interesting.
+
+The cool thing about it is it is not functional or object oriented.  This is another example of his signature declarative style.  The use of itertools to build the deck seemed obvious after I read it twice like the use of slicing to evaluate a straight.
+
+import itertools, random, numpy as np, matplotlib.pyplot as plt
+points,n=[], 10000
+for i in range(n):
+    deck = itertools.product(range(2,15),['Spade','Heart','Diamond','Club']) #build deck
+    mys=pd.DataFrame(deck, columns=['value','suit']).sample(5).sort_values('value') #build dataframe of 5 cards (efficient)
+    temp=0 #initialize with no points
+    if max(mys.iloc[:,0]) in pd.Interval(min(mys.iloc[:,0]),min(mys.iloc[:,0])+4): #evaluate straight
+        temp=1
+    if len(np.unique(mys['suit'])) ==1: #evaluate flush
+        temp+=1
+    points.append(temp)
+np.unique(points,return_counts=True)
+
+(array([0, 1]), array([9584,  416], dtype=int64))
+
+
+Alec's github-linked class-based simulation of an actual game seems really straightforward and easy to read.  Definitely check it out.
+
+https://github.com/man-of-moose/CUNY_604_git/blob/main/604jupyter/First%20Simulation.ipynb
+
