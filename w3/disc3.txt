@@ -1,0 +1,33 @@
+1.  In simulation, what is verification?  What is validation?  How do they differ?  What was done in the assigned simulation journal reading to conduct V&V?
+
+Verification: determination of whether or not the model has been implemented in accordance with real conditions.  This may entail generating spot data at different points of a model to perform "sanity checks".
+
+Validation: determination of whether or not the complete model accurately represents the mechanism that created the real-world data.
+
+
+The main difference lies in the application of the model's outputs to IRL values.
+
+In this article, the model was built around established military doctrine, with a view to minimizing the time traveled overall.  This study is specifically relevant to stability operations, those static situations in which you may be able to optimize the placement of deployable hospitals, ground transport, and medivac helicopters.  The model also offers a recommendation for the number of units required at each station.
+
+So, the verification process in this paper involved the use of empirically established distributions of hot bed casualty centers and the application of a lethality coefficient, derived from medical logs from Operation Iraqi Freedom.  The approach for this model was based off of previous research with slightly different objectives, ie. maximum coverage vs reducing transport time.
+
+The validation process involved a very sweaty Dell XPS 1730, which conducted 43k iterations on the model over nearly 20 minutes, until it produced an integer optimal solution meeting the preset 0.01 optimality criterion. An analysis of variance suggests that the model can be useful for stability operations.
+
+
+
+2.  Share some code from last week that was particularly rewarding or frustrating.  We will comment on it. 
+
+
+t_0 = get_first_label(census)
+t_end = get_last_label(census)
+t_1970 = 1970
+
+p_0 = get_first_value(census)
+p_end = get_last_value(census)
+p_1970 = census[1970]
+
+total_growth = p_end - p_1970
+elapsed_time = t_end - t_1970
+annual_growth = total_growth / elapsed_time
+
+This was a half-hour headache.  Github Copilot suggested t_1970 = 1970 and p_1970 = census[1970], just like in Tejaswi Parker's code. Originally, I had tried to use slicing to avoid defining the 'p' variables and to avoid specifically declaring a variable for 1970, and it kept puking.  I still don't like it.  I assume that there is a more concise way to write this.
