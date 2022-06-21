@@ -1,0 +1,26 @@
+1.  Explain the balance equations from the rainwater harvesting paper posted to this week's reading. 
+
+Equation 1 decribes the volume for a day t which exists in the set of all days T.  It takes the maximum among 0 and the sum of the previous day's volume and the captured amount for the day before it hits the tank, minus the demand for today and the tank overflow.
+
+Equation 2 also describes the volume for a day t in the set T.  It takes the minimum among  the max function from equation 1 (without the overflow consideration) and tank capacity.
+
+I like the diagram of the the system a lot...  The whole thing is useless without a leaf screen!
+
+Then, on page 695, we get a Bayesian system of equations to represent the likelihood of a wet or dry day based on the marginal probabilities from historical information.  The author arrives at a (probably) solid prediction model:
+
+(5) The probability of a wet today given a wet yesteday,
+(6) the probability of a wet today given a dry yesterday,
+(7) the probability of a dry today given a wet yesterday,
+(8) the probability of a dry today given a dry yesterday.
+
+He arrives at (11) a demand satisfaction model (scaled) for two people, with each term significant to p < 0.001.  I guess he and his better two-thirds live alone, and this system works consistently:
+
+X = -711 + 14.23C + 26.97R - 0.09C^2 - 0.24R^2 - 0.19C*R
+
+
+
+2.  Share some code from last week that was particularly rewarding or frustrating.  We will comment on it. 
+
+I feel a bit lame making this comment, but I thought the "dysfunctions" listed at the end of chapter 7 were a bit uhhhhhhhh sophomoric?
+
+To be in the 7th chapter of a programming textbook and to state a bunch of issues with return statements is strange.  No parameters?  Clobbering parameters?  Forgetting return statements?  Did they get paid by the word like Tolstoy?
