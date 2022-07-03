@@ -1,0 +1,19 @@
+1.  How would you model the spread of COVID19 throughout the world?  What would be problematic about doing so?
+
+
+Honestly, I would keep it "simple" with a separate SIR -- susceptible, infectious, recovered -- model for each country (or region with borders not enforced internally).
+
+There are a few huge issues.
+
+The first is that for the beginning of this process, everybody was freaked out, confused, and rapidly mysteriously dying.  We had no information to describe what was happening.
+
+The second is that as this information was sloooowly becoming less opaque, governments would slap on fairly random rules (or, well, not apply them), affecting the observations that we could have known from previous experience.  There are maybe the benefits of some small policy or medical experiments bound to regions, but the constantly changing epidemiology was confusing to everybody, while some people just became enraged and went around trying to get the virus.  Using this timeseries data to predict the future of itself is extremely problematic because the knew data from this process can affect how the process creates the data.
+
+The third, and perhaps simplest problem, is that the virus changes seemingly randomly, affecting both transmissability and lethality, plus with the introduction of vaccines, all with differing effects (some of which are still unknown, just in terms of how they effect transmissability and lethality), the regional SIR model will just explode in complexity.
+
+
+2.  Share some code from last week that was particularly rewarding or frustrating.  We will comment on it. 
+
+I couldn't come up with the correct solution until I read the comments from this week.  Stefano and Ethan crushed it.  I have attached the image my crappy model produced....  Note, on the week 4 discussion.... I clearly spoke too soon.  Embrassing.  It was supposed to be a spoiler, as Dr.Larry suggested.
+
+
