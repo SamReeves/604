@@ -1,0 +1,8 @@
+1.  What are response surface curves?  How do they help in visualizing optimization?
+
+    These are the representations of interactions among multiple input variables to one or more response variables.  They may show you how a range of possible inputs, each changing dependently or independently, produce another range of outputs.  This can help with the intuitive, visually obvious optimization of (max or min, for example) a response variable.
+
+
+2.  Share some code from last week that was particularly rewarding or frustrating.  We will comment on it.
+
+    See "wut.png"
